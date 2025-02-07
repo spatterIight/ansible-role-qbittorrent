@@ -1,0 +1,25 @@
+---
+
+- name: Install qBittorrent
+  tags:
+    - setup-all
+    - setup-qbittorrent
+    - install-all
+    - install-qbittorrent
+  block:
+    - name: Run qBittorrent validation tasks
+      when: qbittorrent_enabled | bool
+      ansible.builtin.include_tasks: "{{ role_path }}/tasks/validate_config.yml"
+
+    - name: Run qBittorrent installation tasks
+      when: qbittorrent_enabled | bool
+      ansible.builtin.include_tasks: "{{ role_path }}/tasks/install.yml"
+
+- name: Uninstall qBittorrent
+  tags:
+    - setup-all
+    - setup-qbittorrent
+  block:
+    - name: Run qBittorrent uninstallation tasks
+      when: not qbittorrent_enabled | bool
+      ansible.builtin.include_tasks: "{{ role_path }}/tasks/uninstall.yml"
