@@ -52,7 +52,7 @@
     driver: bridge
     driver_options: "{{ devture_systemd_docker_base_container_networks_driver_options }}"
 
-- name: Ensure qBittorrent container network exists via command
+- name: Ensure qBittorrent container network is created via ansible.builtin.command
   when: devture_systemd_docker_base_container_network_creation_method == 'command'
   ansible.builtin.command:
     cmd: >-
