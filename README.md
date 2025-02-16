@@ -1,6 +1,6 @@
 # qBittorrent Ansible role
 
-This is an [Ansible](https://www.ansible.com/) role which installs [qBittorrent](https://qbittorrent.video/) to run as a [Docker](https://www.docker.com/) container wrapped in a systemd service.
+This is an [Ansible](https://www.ansible.com/) role which installs [qBittorrent](https://www.qbittorrent.org/) to run as a [Docker](https://www.docker.com/) container wrapped in a systemd service.
 
 This role *implicitly* depends on:
 
