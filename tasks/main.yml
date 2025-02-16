@@ -19,7 +19,8 @@
   tags:
     - print-qbittorrent-password
   block:
-    - when: qbittorrent_enabled | bool
+    - name: Run qBittorrent print temporary password tasks
+      when: qbittorrent_enabled | bool
       ansible.builtin.include_tasks: "{{ role_path }}/tasks/print_qbittorrent_password.yml"
 
 - name: Uninstall qBittorrent
