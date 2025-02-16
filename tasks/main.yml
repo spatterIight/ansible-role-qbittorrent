@@ -15,6 +15,13 @@
       when: qbittorrent_enabled | bool
       ansible.builtin.include_tasks: "{{ role_path }}/tasks/install.yml"
 
+- name: Get the qBittorrent temporary password
+  tags:
+    - print-qbittorrent-password
+  block:
+    - when: qbittorrent_enabled | bool
+      ansible.builtin.include_tasks: "{{ role_path }}/tasks/print_qbittorrent_password.yml"
+
 - name: Uninstall qBittorrent
   tags:
     - setup-all
